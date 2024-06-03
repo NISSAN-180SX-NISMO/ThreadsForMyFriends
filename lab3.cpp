@@ -30,9 +30,9 @@ HANDLE tryToCreateThread(DWORD (*routine)(LPVOID), LPVOID attrs) {
 
 HANDLE tryToMutexInit(bool initiallyOwned = FALSE) {
     HANDLE mutex = CreateMutex(
-            nullptr, // default security attributes // аттрибуты безопасности по умолчанию
-            initiallyOwned,   // initially not owned          // начальное значение владения мьютексом
-            nullptr); // unnamed mutex               // безымянный мьютекс
+            nullptr,        // default security attributes  // аттрибуты безопасности по умолчанию
+            initiallyOwned, // initially not owned          // начальное значение владения мьютексом
+            nullptr);       // unnamed mutex                // безымянный мьютекс
 
     if (mutex == nullptr) {
         printf("CreateMutex error: %lu\n", GetLastError());

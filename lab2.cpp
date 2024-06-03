@@ -146,8 +146,8 @@ void *lab2::sequential::thread_f(void *ptr) {
         pthread_mutex_lock(&lab2::lock);
         std::cout << "f" << std::flush;
         pthread_mutex_unlock(&lab2::lock);
-        computation();
         sem_post(&lab2::semH);
+        computation();
     }
 
     return ptr;
